@@ -1,0 +1,83 @@
+/* Reserve real sky space for both names before laying out the temple.
+   Width changes now grow the scene instead of pushing its spire into the text. */
+.hero.scene {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: 220px;
+}
+.hero.scene .hero-copy {
+  flex: none;
+  width: min(920px, 86%);
+  padding-top: clamp(70px, 8vw, 160px);
+}
+.hero.scene .hero-temple {
+  position: relative;
+  flex: none;
+  left: 50%;
+  bottom: auto;
+  width: min(1100px, 78%);
+  max-width: none;
+  height: auto;
+  margin-top: clamp(24px, 4vw, 64px);
+  transform: translateX(-50%) !important;
+}
+@media (max-width: 700px) {
+  .hero.scene { min-height: 700px; padding-bottom: 0; }
+  .hero.scene .hero-copy { width: 90%; padding-top: 62px; }
+  .hero.scene .hero-temple {
+    width: 113%;
+    max-width: none;
+    margin-top: 18px;
+    margin-bottom: -185px;
+  }
+}
+
+/* Keep the temple grounded while allowing a small, bounded parallax drift.
+   The foliage sits below the ground line, framing rather than covering it. */
+.hero.scene { padding-bottom: 0; }
+.hero.scene .hero-temple {
+  margin-bottom: 0;
+  transform: translate3d(-50%, clamp(0px, var(--motion-y, 0px), 80px), 0) scale(var(--motion-scale, 1)) !important;
+}
+.hero.scene .hero-facade {
+  width: 100%;
+  min-width: 0;
+  bottom: -32vw;
+  transform: translate3d(-50%, clamp(0px, var(--motion-y, 0px), 48px), 0) !important;
+}
+@media(max-width:700px) {
+  .hero.scene .hero-facade { width: 140%; bottom: -44vw; }
+  .hero.scene .hero-temple {
+    transform: translate3d(-50%, clamp(0px, var(--motion-y, 0px), 38px), 0) scale(var(--motion-scale, 1)) !important;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .hero.scene .hero-temple, .hero.scene .hero-facade { transform: translateX(-50%) !important; }
+}
+
+/* Confine the canopy to the hero; never cover the invitation artwork. */
+@media(max-width:700px) {
+  .hero.scene {
+    z-index: 2;
+    overflow: hidden;
+    margin-bottom: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .hero.scene .hero-facade {
+    width: 112%;
+    bottom: -54px;
+    pointer-events: none;
+    transform: translate3d(-50%, clamp(0px, var(--motion-y, 0px), 8px), 0) !important;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+@media(max-width:700px) and (prefers-reduced-motion:reduce) {
+  .hero.scene .hero-facade { transform: translateX(-50%) !important; }
+}
+
+@media(max-width:700px) {
+  .invitation.scene { background-position: center top; }
+}

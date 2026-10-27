@@ -1,0 +1,68 @@
+/* Anchor the heading to the red artwork instead of moving it across the arch. */
+.story.scene .story-copy { transform: none !important; opacity: 1 !important; }
+.story.scene .story-heading-region {
+  box-sizing: border-box;
+  height: 300px;
+  padding-top: 80px;
+}
+.story.scene .story-eyebrow { font-size: 44px; line-height: 1.25; }
+.story.scene .story-subtitle { font-size: 52px; line-height: 1.2; margin: 6px auto 0; }
+.story.scene .story-panel-copy { margin-top: 90px; }
+html[lang='hi'] .story.scene .story-heading-region { padding-top: 72px; }
+html[lang='hi'] .story.scene .story-subtitle { font-size: 36px; line-height: 1.4; margin-top: 0; }
+@media(max-width:700px) {
+  .story.scene .story-heading-region { height: 125px; padding-top: 25px; }
+  .story.scene .story-eyebrow { font-size: 22px; line-height: 1.2; }
+  .story.scene .story-subtitle { font-size: 30px; line-height: 1.2; margin-top: 4px; }
+  .story.scene .story-panel-copy { margin-top: 62px; }
+  html[lang='hi'] .story.scene .story-heading-region { padding-top: 24px; }
+  html[lang='hi'] .story.scene .story-subtitle { font-size: 18px; line-height: 1.4; }
+}
+
+/* All three display lines live in the red area; only the poem uses the panel. */
+.story.scene .story-heading-region .story-title {
+  margin: 12px auto 0;
+  font-size: 76px;
+  line-height: 1.1;
+  color: #f0d49a;
+}
+.story.scene .story-panel-copy { margin-top: 190px; }
+html[lang='hi'] .story.scene .story-heading-region .story-title { font-size: 40px; line-height: 1.2; margin-top: 0; }
+html[lang='hi'] .story.scene .story-panel-copy { margin-top: 213px; }
+@media(max-width:700px) {
+  .story.scene .story-heading-region { padding-top: 14px; }
+  .story.scene .story-eyebrow { font-size: 18px; }
+  .story.scene .story-subtitle { font-size: 26px; margin-top: 2px; }
+  .story.scene .story-heading-region .story-title { margin-top: 6px; font-size: 36px; }
+  .story.scene .story-panel-copy { margin-top: 110px; }
+  html[lang='hi'] .story.scene .story-heading-region { padding-top: 10px; }
+  html[lang='hi'] .story.scene .story-eyebrow { font-size: 16px; }
+  html[lang='hi'] .story.scene .story-subtitle { font-size: 16px; }
+  html[lang='hi'] .story.scene .story-heading-region .story-title { font-size: 22px; margin-top: 0; }
+  html[lang='hi'] .story.scene .story-panel-copy { margin-top: 128px; }
+}
+
+/* Start the poem where the arch has widened into the clear ivory panel. */
+.story.scene .story-panel-copy,
+html[lang='hi'] .story.scene .story-panel-copy {
+  width: min(620px, 60vw);
+  margin-top: 420px;
+}
+.story.scene .story-body,
+html[lang='hi'] .story.scene .story-body {
+  width: 100%;
+  margin-top: 0;
+}
+.story.scene .story-gallery-portrait,
+html[lang='hi'] .story.scene .story-gallery-portrait { margin-top: 48px; }
+@media(max-width:700px) {
+  .story.scene .story-panel-copy,
+  html[lang='hi'] .story.scene .story-panel-copy {
+    width: min(300px, 70vw);
+    margin-top: 145px;
+  }
+  .story.scene .story-body,
+  html[lang='hi'] .story.scene .story-body { font-size: 12px; line-height: 1.6; }
+  .story.scene .story-gallery-portrait,
+  html[lang='hi'] .story.scene .story-gallery-portrait { margin-top: 42px; }
+}

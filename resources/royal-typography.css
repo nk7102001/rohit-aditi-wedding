@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Rozha+One&family=Yatra+One&family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Cinzel Decorative Local';
+  src: url('fonts/CinzelDecorative-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Great Vibes Local';
+  src: url('fonts/GreatVibes-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display Local';
+  src: url('fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat Local';
+  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rozha One Local';
+  src: url('fonts/RozhaOne.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Yatra One Local';
+  src: url('fonts/YatraOne.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* =========================================================
+   HERO TYPOGRAPHY - ROYAL LUXURY WEDDING STYLING
+   ========================================================= */
+
+.hero-copy {
+  text-transform: none !important;
+}
+
+/* English Hero Names */
+html[lang="en"] .hero-copy h1 {
+  font-family: 'Cinzel Decorative Local', 'Cinzel Decorative', 'Cinzel', 'Playfair Display Local', 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  text-transform: capitalize !important;
+  font-size: clamp(3rem, 8.5vw, 5.6rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.03em !important;
+  color: #ffffff !important;
+  text-shadow: 
+    0 4px 20px rgba(0, 36, 85, 0.45),
+    0 0 35px rgba(255, 235, 175, 0.45),
+    0 0 60px rgba(255, 220, 130, 0.25) !important;
+}
+
+/* English Hero Connector */
+html[lang="en"] .hero-copy span {
+  font-family: 'Great Vibes Local', 'Great Vibes', cursive !important;
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem) !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  color: #ffe082 !important;
+  margin: 6px 0 12px !important;
+  text-transform: none !important;
+  letter-spacing: 0.05em !important;
+  display: inline-block !important;
+  text-shadow: 
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(255, 220, 130, 0.75) !important;
+}
+
+/* English Hero Tagline */
+html[lang="en"] .hero-copy p {
+  font-family: 'Montserrat Local', 'Montserrat', sans-serif !important;
+  font-size: clamp(0.72rem, 1.4vw, 0.95rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.28em !important;
+  text-transform: uppercase !important;
+  color: #fff9e6 !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 999px !important;
+  padding: 9px 28px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 6px 24px rgba(0, 20, 50, 0.25) !important;
+  margin: 32px auto 0 !important;
+  width: fit-content !important;
+}
+
+/* Hindi Hero Names */
+html[lang="hi"] .hero-copy h1 {
+  font-family: 'Rozha One Local', 'Rozha One', 'Yatra One Local', 'Yatra One', 'Tiro Devanagari Hindi', 'Kohinoor Devanagari', serif !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+  font-size: clamp(3.2rem, 8.5vw, 5.8rem) !important;
+  line-height: 1.18 !important;
+  letter-spacing: 0.02em !important;
+  color: #ffffff !important;
+  text-shadow: 
+    0 4px 20px rgba(0, 36, 85, 0.45),
+    0 0 35px rgba(255, 235, 175, 0.45),
+    0 0 60px rgba(255, 220, 130, 0.25) !important;
+}
+
+/* Hindi Hero Connector */
+html[lang="hi"] .hero-copy span {
+  font-family: 'Rozha One Local', 'Rozha One', 'Yatra One Local', 'Yatra One', serif !important;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem) !important;
+  font-weight: 400 !important;
+  color: #ffe082 !important;
+  margin: 8px 0 14px !important;
+  text-transform: none !important;
+  letter-spacing: 0.04em !important;
+  display: inline-block !important;
+  text-shadow: 
+    0 2px 14px rgba(0, 0, 0, 0.35),
+    0 0 24px rgba(255, 220, 130, 0.75) !important;
+}
+
+/* Hindi Hero Tagline */
+html[lang="hi"] .hero-copy p {
+  font-family: 'Yatra One Local', 'Yatra One', 'Kohinoor Devanagari', 'Nirmala UI', serif !important;
+  font-size: clamp(0.9rem, 1.6vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: none !important;
+  color: #fff9e6 !important;
+  background: rgba(255, 255, 255, 0.16) !important;
+  border: 1px solid rgba(255, 255, 255, 0.38) !important;
+  border-radius: 999px !important;
+  padding: 8px 24px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 6px 24px rgba(0, 20, 50, 0.25) !important;
+  margin: 28px auto 0 !important;
+  width: fit-content !important;
+}
+
+/* =========================================================
+   INVITATION SECTION TYPOGRAPHY
+   ========================================================= */
+
+html[lang="en"] .invitation-person-name {
+  font-family: 'Cinzel Decorative Local', 'Cinzel Decorative', 'Cinzel', 'Playfair Display Local', serif !important;
+  text-transform: capitalize !important;
+  font-weight: 700 !important;
+  color: #4a2810 !important;
+  letter-spacing: 0.02em !important;
+}
+
+html[lang="hi"] .invitation-person-name {
+  font-family: 'Rozha One Local', 'Rozha One', 'Yatra One Local', 'Yatra One', serif !important;
+  font-weight: 400 !important;
+  color: #4a2810 !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* =========================================================
+   EVENT CARDS TYPOGRAPHY
+   ========================================================= */
+
+html[lang="en"] .event-copy h3,
+html[lang="en"] .event-overlay h3 {
+  font-family: 'Cinzel Decorative Local', 'Cinzel Decorative', 'Cinzel', 'Playfair Display Local', serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(2rem, 3.5vw, 2.75rem) !important;
+  letter-spacing: 0.04em !important;
+  color: #452410 !important;
+}
+
+html[lang="hi"] .event-copy h3,
+html[lang="hi"] .event-overlay h3 {
+  font-family: 'Rozha One Local', 'Rozha One', 'Yatra One Local', 'Yatra One', serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(2.1rem, 3.8vw, 3rem) !important;
+  letter-spacing: 0.02em !important;
+  color: #452410 !important;
+}
+
+/* =========================================================
+   STORY, COUNTDOWN & RSVP SECTION TYPOGRAPHY & LAYOUT
+   ========================================================= */
+
+/* Ensure RSVP and Countdown containers have ample width on desktop */
+.rsvp-card {
+  width: min(720px, 92vw) !important;
+  max-width: 92vw !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+.countdown-inner {
+  width: min(920px, 92vw) !important;
+  max-width: 92vw !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+/* Strict no mid-word breaking across sections */
+.rsvp-card h2,
+.countdown h2,
+.countdown-inner h2,
+.story h2,
+.story-subtitle,
+.story-eyebrow,
+.hero-copy h1,
+.invitation-person-name,
+.social-hashtag-static {
+  white-space: normal !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  text-wrap: balance !important;
+  hyphens: none !important;
+}
+
+/* English Headings */
+html[lang="en"] .story h2,
+html[lang="en"] .countdown h2,
+html[lang="en"] .rsvp-card h2 {
+  font-family: 'Cinzel Decorative Local', 'Cinzel Decorative', 'Cinzel', 'Playfair Display Local', serif !important;
+  font-weight: 700 !important;
+}
+
+html[lang="en"] .rsvp-card h2 {
+  font-size: clamp(2.2rem, 4.2vw, 3.25rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 auto 24px !important;
+  max-width: 100% !important;
+}
+
+html[lang="en"] .countdown h2 {
+  font-size: clamp(2.4rem, 4.6vw, 3.8rem) !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.04em !important;
+  margin: 0 auto clamp(24px, 4vh, 48px) !important;
+  max-width: 100% !important;
+}
+
+/* Hindi Headings */
+html[lang="hi"] .story h2,
+html[lang="hi"] .countdown h2,
+html[lang="hi"] .rsvp-card h2 {
+  font-family: 'Rozha One Local', 'Rozha One', 'Yatra One Local', 'Yatra One', serif !important;
+  font-weight: 400 !important;
+}
+
+html[lang="hi"] .rsvp-card h2 {
+  font-size: clamp(1.85rem, 3.6vw, 2.75rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.01em !important;
+  margin: 0 auto 20px !important;
+  max-width: 100% !important;
+}
+
+html[lang="hi"] .countdown h2 {
+  font-size: clamp(2.2rem, 4.4vw, 3.5rem) !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 auto clamp(24px, 4vh, 48px) !important;
+  max-width: 100% !important;
+}

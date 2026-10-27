@@ -1,0 +1,167 @@
+.language-toggle {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  right: max(14px, env(safe-area-inset-right));
+  z-index: 90;
+  display: flex;
+  gap: 3px;
+  padding: 4px;
+  border: 1px solid #cbb886;
+  border-radius: 24px;
+  background: #fffaf2;
+  box-shadow: 0 3px 14px #26344a18;
+}
+.language-toggle button { border: 0; border-radius: 20px; background: transparent; color: #45341f; font: 500 14px/1.4 Arial, sans-serif; padding: 8px 12px; cursor: pointer; }
+.language-toggle button[aria-pressed="true"] { background: #725009; color: #fff; }
+.language-toggle button:focus-visible { outline: 2px solid #244c77; outline-offset: 2px; }
+html[lang="hi"] .invitation-copy h2,
+html[lang="hi"] .story-subtitle,
+html[lang="hi"] .story h2,
+html[lang="hi"] .rsvp-card h2,
+html[lang="hi"] .countdown h2,
+html[lang="hi"] .event-overlay h3 { font-family: "Noto Serif Devanagari", "Kohinoor Devanagari", "Nirmala UI", serif; line-height: 1.4; }
+html[lang="hi"] .story h2 { font-size: clamp(44px, 7vw, 90px); }
+html[lang="hi"] .rsvp-card h2 { font-size: clamp(30px, 5vw, 60px); }
+html[lang="hi"] .event-overlay h3 { font-size: clamp(40px, 5vw, 64px); }
+html[lang="hi"] .countdown-grid span { letter-spacing: 0; }
+
+/* Small translucent language control. */
+.language-toggle { gap: 2px; padding: 3px; background: rgba(255,250,242,.52); border-color: rgba(255,255,255,.7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.language-toggle button { min-width: 36px; min-height: 36px; padding: 6px 8px; font-size: 12px; }
+.language-toggle button[aria-pressed="true"] { background: rgba(87,62,17,.85); }
+.countdown-grid strong { background: rgba(255,252,244,.34); border: 1px solid rgba(255,255,255,.72); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 8px 24px #50180518; }
+/* Preserve the footer artwork's native 941 × 1672 proportions. */
+.countdown.scene { min-height: 0; aspect-ratio: 941 / 1672; background-size: 100% 100%; }
+.countdown-inner { padding-top: 18%; }
+/* Let the transparent leaf tips sit over the red story artwork. */
+.events.scene { z-index: 2; }
+.story.scene { z-index: 1; }
+.events .couple-scene { overflow: visible; transform: none; opacity: 1; }
+.events .couple-temple { bottom: 0; transform: translateX(-50%); }
+.story-heading-region { padding-top: clamp(105px, 16vw, 230px); }
+html[lang="hi"] .hero-copy h1,
+html[lang="hi"] .invitation-person-name { font-family: "Kohinoor Devanagari", "Nirmala UI", serif; line-height: 1.4 !important; }
+@media(max-width:700px) {
+  .events .couple-scene { width: calc(100% + 28px); margin-left: -14px; margin-right: -14px; }
+  .countdown-inner { padding-top: 16%; }
+  .story-heading-region { padding-top: 100px; }
+  html[lang="hi"] .countdown h2 { font-size: 32px; }
+}
+
+/* One compact glass music button, matching the language switch. */
+.music-player.music-minimal {
+  left: max(14px, env(safe-area-inset-left));
+  bottom: max(14px, env(safe-area-inset-bottom));
+  width: 44px;
+  height: 44px;
+  min-width: 0;
+  padding: 3px;
+  gap: 0;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 50%;
+  background: rgba(255,250,242,.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 3px 14px #26344a18;
+}
+.music-player.music-minimal .music-play {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #45341f;
+  box-shadow: none;
+  animation: none;
+}
+.music-minimal .music-play svg { display: block; }
+.music-minimal .music-play:focus-visible { outline: 2px solid #244c77; outline-offset: 2px; }
+
+/* Kashi's long swashes need real line-box space, not clipped transforms. */
+@font-face {
+  font-family: 'AMS Kashi';
+  src: url('fonts/ams-kashi.ttf?v=1') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
+}
+.kashi-title { display: inline-block; max-width: 100%; padding: .1em .32em .5em .18em; line-height: 1.5; vertical-align: middle; }
+.kashi-glyphs { font-family: 'AMS Kashi', serif !important; font-weight: 400; font-style: normal; letter-spacing: 0; text-transform: none; }
+html[lang='hi'] .hero-copy h1 { font-size: clamp(48px, 9vw, 100px); line-height: 1.5 !important; margin: 0; overflow: visible; }
+html[lang='hi'] .invitation-person-name { font-size: clamp(38px, 7vw, 70px); overflow: visible; }
+html[lang='hi'] .event-overlay h3 { font-size: clamp(38px, 7vw, 58px); line-height: 1.5; margin-bottom: 4px; }
+html[lang='hi'] .story-panel-copy h2 { font-size: clamp(32px, 5.5vw, 64px); line-height: 1.5; }
+html[lang='hi'] .story-panel-copy { overflow: visible; }
+html[lang='hi'] .hero-copy { overflow: visible; }
+@media (max-width: 700px) {
+  html[lang='hi'] .hero-copy h1 { font-size: clamp(44px, 11vw, 68px); }
+  html[lang='hi'] .event-overlay h3 { font-size: clamp(36px, 9vw, 52px); }
+  html[lang='hi'] .story-panel-copy h2 { font-size: clamp(28px, 7vw, 42px); }
+}
+/* Original hero span rules target the connector; exclude our nested glyphs. */
+html[lang='hi'] .hero-copy h1 .kashi-title,
+html[lang='hi'] .hero-copy h1 .kashi-glyphs { font-size: inherit !important; margin: 0; color: inherit; }
+
+html[lang='hi'] .hero-copy h1 { font-size: clamp(48px, 9vw, 100px) !important; }
+@media(max-width:700px) {
+  html[lang='hi'] .hero-copy h1 { font-size: clamp(44px, 11vw, 68px) !important; }
+}
+
+/* Keep Hindi text inside the artwork's clear panels, with no section parallax
+   shifting it onto the arch or the temple flag. Hero retains its own motion. */
+html[lang='hi'] .invitation-copy,
+html[lang='hi'] .story-copy { transform: none !important; opacity: 1 !important; }
+html[lang='hi'] .invitation-copy h2 { font-size: clamp(32px, 4vw, 64px); line-height: 1.35; margin: 18px 0 12px; }
+html[lang='hi'] .invitation-person-name { font-size: clamp(40px, 5vw, 76px) !important; margin-top: 8px; }
+html[lang='hi'] .invitation-person-name .kashi-title { padding-bottom: .38em; }
+html[lang='hi'] .invitation-connector { font-size: clamp(22px, 2.5vw, 36px); line-height: 1.4; margin: 8px 0; }
+html[lang='hi'] .story-heading-region { padding-top: clamp(80px, 7vw, 130px); }
+html[lang='hi'] .story-eyebrow { font-size: clamp(28px, 3vw, 44px); line-height: 1.3; }
+html[lang='hi'] .story-subtitle { font-size: clamp(24px, 3vw, 42px); line-height: 1.4; margin: 0 auto; max-width: 80%; }
+html[lang='hi'] .story-panel-copy { margin-top: clamp(90px, 8vw, 140px); }
+html[lang='hi'] .story-body { margin-top: 12px; }
+html[lang='hi'] .story-gallery-portrait { margin-top: 30px; }
+@media (max-width:700px) {
+  html[lang='hi'] .invitation-copy { padding-top: 190px; width: 70%; }
+  html[lang='hi'] .invitation-copy .blessing { margin: 0 0 14px; font-size: 14px; line-height: 1.5; letter-spacing: 0; }
+  html[lang='hi'] .invitation-copy .opening { margin: 0; font-size: 12px; line-height: 1.5; }
+  html[lang='hi'] .invitation-copy h2 { font-size: 32px; margin: 12px 0 8px; }
+  html[lang='hi'] .invitation-person-name { font-size: 36px !important; margin-top: 4px; }
+  html[lang='hi'] .invitation-lineage { font-size: 11px !important; margin-top: 0; line-height: 1.5 !important; }
+  html[lang='hi'] .invitation-connector { font-size: 20px; margin: 4px 0; }
+  html[lang='hi'] .events-heading { font-size: 13px; line-height: 1.5; margin: 14px 0 0; }
+  html[lang='hi'] .story-heading-region { padding-top: 32px; }
+  html[lang='hi'] .story-eyebrow { font-size: 22px; }
+  html[lang='hi'] .story-subtitle { font-size: clamp(18px, 5vw, 26px); line-height: 1.4; max-width: 82%; }
+  html[lang='hi'] .story-panel-copy { margin-top: 80px; width: 74%; }
+  html[lang='hi'] .story-panel-copy h2 { font-size: 30px; color: #865523; }
+  html[lang='hi'] .story-body { font-size: 12px; line-height: 1.6; margin-top: 8px; width: 100%; }
+  html[lang='hi'] .story-gallery-portrait { margin-top: 24px; }
+}
+
+/* Hindi RSVP must wrap at word boundaries inside the ivory arch. */
+html[lang='hi'] .rsvp-card {
+  width: min(380px, 64%);
+  transform: none !important;
+  opacity: 1 !important;
+}
+html[lang='hi'] .rsvp-card h2 {
+  max-width: 100%;
+  margin: 0 auto 18px;
+  font-size: 34px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: balance;
+}
+@media(max-width:700px) {
+  html[lang='hi'] .rsvp-card { width: min(290px, 64%); }
+  html[lang='hi'] .rsvp-card h2 { max-width: 240px; font-size: clamp(19px, 4.6vw, 24px); line-height: 1.45; margin-bottom: 12px; }
+  html[lang='hi'] .rsvp-card > p { font-size: 12px; line-height: 1.5; margin-bottom: 14px; }
+  html[lang='hi'] .rsvp-open { padding: 10px 22px; }
+}
