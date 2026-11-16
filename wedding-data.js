@@ -91,7 +91,7 @@ window.WEDDING_DATA = {
       "venue": "Courtyard, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/haldi.mp4"
     },
     {
@@ -103,7 +103,7 @@ window.WEDDING_DATA = {
       "venue": "Garden Pavilion, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/mehendi.mp4"
     },
     {
@@ -115,7 +115,7 @@ window.WEDDING_DATA = {
       "venue": "Grand Ballroom, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/sangeet.mp4"
     },
     {
@@ -127,7 +127,7 @@ window.WEDDING_DATA = {
       "venue": "Main Entrance, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/bharat.mp4"
     },
     {
@@ -139,7 +139,7 @@ window.WEDDING_DATA = {
       "venue": "Wedding Mandap, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/wedding.mp4"
     }
   ],
@@ -165,7 +165,7 @@ window.WEDDING_DATA = {
     "body": "We would be honoured to celebrate with you. Please let us know if you will be joining us.",
     "buttonLabel": "RSVP",
     "tapLabel": "TAP HERE",
-    "submitEndpoint": "",
+    "submitEndpoint": "/api/rsvp",
     "venueName": "Taj Palace",
     "venueAddress": "Jaipur, Rajasthan",
     "formTitle": "Join the Celebration",
@@ -190,7 +190,7 @@ window.WEDDING_DATA = {
     "submitLabel": "Send RSVP",
     "sendingLabel": "Sending...",
     "successTitle": "Thank You!",
-    "successMessage": "Your RSVP has been received. We cannot wait to celebrate with you.",
+    "successMessage": "Your response has been saved on this computer.",
     "errorMessage": "We could not save your RSVP. Please try again.",
     "doneLabel": "Done",
     "closeLabel": "Close RSVP form",

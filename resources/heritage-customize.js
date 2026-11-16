@@ -94,7 +94,7 @@
       "{path}",
       path,
     );
-    const logo = gate.logo || "./resources/wedvo-logo.png";
+    const logo = gate.logo || "./resources/social-preview.webp";
     const siteUrl = gate.siteUrl || "https://wedvo.in";
     const overlay = document.createElement("main");
     overlay.className = "heritage-payment-gate";

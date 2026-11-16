@@ -84,7 +84,7 @@ html[lang="hi"] .invitation-person-name { font-family: "Kohinoor Devanagari", "N
 /* Kashi's long swashes need real line-box space, not clipped transforms. */
 @font-face {
   font-family: 'AMS Kashi';
-  src: url('fonts/ams-kashi.ttf?v=1') format('truetype');
+  src: url('fonts/ams-kashi.woff2?v=1') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: block;

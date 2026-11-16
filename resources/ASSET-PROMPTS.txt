@@ -1,0 +1,26 @@
+Generated with built-in ImageGen.
+
+Rose petal: One naturally curved deep rose pink petal, photographic macro texture, fine veins, translucent edges, softly curled tip, warm natural light, isolated transparent background.
+
+Floral toran: Photorealistic Indian wedding floral canopy, layered real orange and golden marigolds, burgundy roses and natural mango leaves, softly drooping swags and short hanging strings, believable gravity, soft daylight, transparent background, no text.
+
+Additional generated assets — built-in ImageGen
+
+hero-real.webp
+Edit the source temple to photoreal carved rose-beige sandstone, natural texture and warm directional light. Preserve front view, full silhouette, flag location, architectural details and transparent background.
+
+temple-real.webp
+Transform the decorated temple into photoreal architecture. Preserve composition, steps, flag, bell and diya positions. Replace paper flowers and leaves with real marigolds, jasmine, roses, banana leaves and lotus petals. Natural stone, brushed brass, warm afternoon light, transparent background.
+
+foliage-real.webp
+Recreate the original foreground foliage with real natural green leaves, preserve open center and lower-side composition. Remove blue edge halos. True transparency between leaves, no sky or buildings.
+
+Ceremony scenes (haldi.webp, mehndi.webp, sangeet.webp, baraat.webp, wedding.webp)
+Shared brief: Photorealistic premium Indian wedding editorial photography in vertical 4:5 composition. Real materials, natural depth, warm grading, no people or text. Decor in upper two thirds and quiet ivory floor below for readable overlay.
+Haldi: Sandstone courtyard, real golden marigolds, carved ivory bench, brass urli with yellow and rose petals, turmeric bowls, morning sunlight.
+Mehndi: Garden pavilion, carved wood, emerald velvet seating, fresh jasmine and white roses, henna cones on brass tray, foliage and amber lanterns.
+Sangeet: Twilight stage with burgundy velvet drapery, white and deep pink flowers, brass lanterns, fairy lights, reflective floor and lilac atmosphere.
+Baraat: Sandstone palace gate at dusk, realistic decorated white horse with burgundy-gold ceremonial cloth, marigolds and resting traditional dhol drums.
+Wedding: Carved four-pillar mandap with fresh jasmine and red roses, brass diyas, two ivory-gold seats, warm twilight and symmetrical composition.
+
+Marigold flower — built-in ImageGen: Single photoreal orange-gold Indian marigold flower head, layered ruffled petals, natural texture, top three-quarter view, warm daylight, isolated transparent background, no stem or text.

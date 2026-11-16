@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Clock, Sparkles } from 'lucide-react';
 
 export default function CountdownTimer({ t, lang }) {
-  // Target wedding date: November 22, 2026 19:30:00 IST
-  const targetDate = new Date('2026-11-22T19:30:00+05:30').getTime();
+  // Target wedding date: August 22, 2027 19:00:00 IST
+  const targetDate = new Date('2027-08-22T19:00:00+05:30').getTime();
 
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -49,7 +49,7 @@ export default function CountdownTimer({ t, lang }) {
           {t.countdown.subtitle}
         </h3>
         <p className="text-xs sm:text-sm text-amber-200/80 font-cinzel tracking-wider mb-8">
-          22 November 2026 • 07:30 PM
+          22 August 2027 • 07:00 PM
         </p>
 
         {/* Counter Grid */}

@@ -90,7 +90,7 @@
       "venue": "Courtyard, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/haldi.mp4"
     },
     {
@@ -102,7 +102,7 @@
       "venue": "Garden Pavilion, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/mehendi.mp4"
     },
     {
@@ -114,7 +114,7 @@
       "venue": "Grand Ballroom, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/sangeet.mp4"
     },
     {
@@ -126,7 +126,7 @@
       "venue": "Main Entrance, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/bharat.mp4"
     },
     {
@@ -138,7 +138,7 @@
       "venue": "Wedding Mandap, Taj Palace",
       "description": "",
       "locationLabel": "",
-      "locationUrl": "https://www.google.com/maps",
+      "locationUrl": "https://www.google.com/maps/search/?api=1&query=Taj+Palace+Jaipur",
       "video": "./resources/videos/wedding.mp4"
     }
   ],
@@ -164,7 +164,7 @@
     "body": "We would be honoured to celebrate with you. Please let us know if you will be joining us.",
     "buttonLabel": "RSVP",
     "tapLabel": "TAP HERE",
-    "submitEndpoint": "",
+    "submitEndpoint": "/api/rsvp",
     "venueName": "Taj Palace",
     "venueAddress": "Jaipur, Rajasthan",
     "formTitle": "Join the Celebration",
@@ -189,7 +189,7 @@
     "submitLabel": "Send RSVP",
     "sendingLabel": "Sending...",
     "successTitle": "Thank You!",
-    "successMessage": "Your RSVP has been received. We cannot wait to celebrate with you.",
+    "successMessage": "Your response has been saved on this computer.",
     "errorMessage": "We could not save your RSVP. Please try again.",
     "doneLabel": "Done",
     "closeLabel": "Close RSVP form",
@@ -247,19 +247,4 @@
     "email": "",
     "phone": ""
   }
-};
-
-/* Serve wedding.json from the data above so the page also opens
-   directly from disk, where browsers block fetch() of local files. */
-(() => {
-  const nativeFetch = window.fetch.bind(window);
-  window.fetch = (resource, options) => {
-    const url = typeof resource === "string" ? resource : (resource && resource.url) || "";
-    if (/(^|\/)wedding\.json(?:[?#]|$)/i.test(url)) {
-      return Promise.resolve(new Response(JSON.stringify(window.WEDDING_DATA), {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      }));
-    }
-    return nativeFetch(resource, options);
-  }
+}

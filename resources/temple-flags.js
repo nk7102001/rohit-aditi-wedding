@@ -1,134 +1,89 @@
-/* =========================================================
-   ULTRA-OPTIMIZED 60FPS FLUTTERING SAFFRON FLAGS
-   Precomputed wave frames for zero CPU overhead & silky smoothness
-   ========================================================= */
 (() => {
-  const configs = [
-    {
-      id: 'hero',
-      selector: '.hero-temple',
-      src: 'resources/assets/source-1/saffron_flag_cloth.png',
-      leftPct: 0.490,
-      topPct: 0.013,
-      widthPct: 0.186,
-      heightPct: 0.110
-    },
-    {
-      id: 'couple',
-      selector: '.couple-temple',
-      src: 'resources/assets/source-1/couple_flag_cloth.png',
-      leftPct: 0.495,
-      topPct: 0.045,
-      widthPct: 0.224,
-      heightPct: 0.078
-    }
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const flags = [
+    { selector: '.hero-temple', source: 'saffron_flag_cloth.png', x: .490, y: .013, w: .186, h: .110, phase: 0 },
+    { selector: '.couple-temple', source: 'couple_flag_cloth.png', x: .500, y: .035, w: .224, h: .080, phase: 1.3 }
   ];
-
-  const TOTAL_FRAMES = 24;
-
-  configs.forEach(cfg => {
-    const img = new Image();
-    img.src = cfg.src;
-    img.onload = () => {
-      // Pre-render wave animation frames into offscreen canvases once
-      const w = img.naturalWidth;
-      const h = img.naturalHeight;
-      const padY = 30;
-      const frames = [];
-
-      for (let f = 0; f < TOTAL_FRAMES; f++) {
-        const offCanvas = document.createElement('canvas');
-        offCanvas.width = w + 10;
-        offCanvas.height = h + padY * 2;
-        const offCtx = offCanvas.getContext('2d');
-        const t = (f / TOTAL_FRAMES) * Math.PI * 2;
-
-        for (let x = 0; x < w; x++) {
-          const progress = x / w;
-          const waveY = Math.sin(t * 2 - progress * 6.5) * (progress * progress * 13) +
-                        Math.cos(t * 3 - progress * 9.5) * (progress * 4.5);
-          offCtx.drawImage(img, x, 0, 1, h, x, padY + waveY, 1.2, h);
-        }
-        frames.push(offCanvas);
-      }
-      cfg.frames = frames;
-      initOverlay(cfg);
-    };
-  });
-
-  function initOverlay(cfg) {
-    const temple = document.querySelector(cfg.selector);
-    if (!temple || !temple.parentElement) return;
-
-    const parent = temple.parentElement;
-    let canvas = parent.querySelector(`.flag-canvas-${cfg.id}`);
-    if (!canvas) {
-      canvas = document.createElement('canvas');
-      canvas.className = `flag-canvas flag-canvas-${cfg.id}`;
-      canvas.style.cssText = 'position:absolute;pointer-events:none;z-index:10;will-change:transform;';
-      parent.appendChild(canvas);
+  let frame = 0;
+  function attach(flag) {
+    const temple = document.querySelector(flag.selector);
+    if (!temple || !temple.complete || !temple.naturalWidth || !flag.image.complete || !flag.image.naturalWidth) return;
+    if (flag.temple === temple && flag.canvas?.isConnected) return;
+    flag.canvas?.remove();
+    flag.temple = temple;
+    flag.canvas = document.createElement('canvas');
+    flag.canvas.className = 'flag-canvas';
+    flag.canvas.setAttribute('aria-hidden', 'true');
+    flag.canvas.style.cssText = 'position:absolute;pointer-events:none;z-index:10';
+    temple.parentElement.append(flag.canvas);
+    flag.context = flag.canvas.getContext('2d');
+    if (flag.selector === '.couple-temple') {
+      flag.lights?.forEach(light => light.remove());
+      flag.lights = [.17, .83].map(() => {
+        const light = document.createElement('span'); light.className = 'diya-light';
+        light.setAttribute('aria-hidden', 'true'); temple.parentElement.append(light); return light;
+      });
     }
-    cfg.canvas = canvas;
-    cfg.ctx = canvas.getContext('2d');
-    updateCanvasPosition(cfg);
   }
-
-  function updateCanvasPosition(cfg) {
-    const temple = document.querySelector(cfg.selector);
-    if (!temple || !cfg.canvas) return;
-
-    const tRect = temple.getBoundingClientRect();
-    const pRect = temple.parentElement.getBoundingClientRect();
-
-    const tLeft = tRect.left - pRect.left;
-    const tTop = tRect.top - pRect.top;
-    const tWidth = tRect.width;
-    const tHeight = tRect.height;
-
-    const fLeft = tLeft + tWidth * cfg.leftPct;
-    const fTop = tTop + tHeight * cfg.topPct;
-    const fWidth = tWidth * cfg.widthPct;
-    const fHeight = tHeight * cfg.heightPct;
-
-    const padY = 24;
-    cfg.canvas.style.left = `${fLeft}px`;
-    cfg.canvas.style.top = `${fTop - padY / 2}px`;
-    cfg.canvas.style.width = `${fWidth}px`;
-    cfg.canvas.style.height = `${fHeight + padY}px`;
-
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    cfg.canvas.width = Math.round(fWidth * dpr);
-    cfg.canvas.height = Math.round((fHeight + padY) * dpr);
-    cfg.drawW = cfg.canvas.width;
-    cfg.drawH = cfg.canvas.height;
-  }
-
-  window.addEventListener('resize', () => {
-    configs.forEach(cfg => { if (cfg.canvas) updateCanvasPosition(cfg); });
-  });
-
-  let frameTick = 0;
-  let running = true;
-
-  document.addEventListener('visibilitychange', () => {
-    running = !document.hidden;
-    if (running) requestAnimationFrame(loop);
-  });
-
-  function loop() {
-    if (!running) return;
-    frameTick = (frameTick + 0.4) % TOTAL_FRAMES;
-    const frameIndex = Math.floor(frameTick);
-
-    configs.forEach(cfg => {
-      if (cfg.ctx && cfg.frames && cfg.frames[frameIndex]) {
-        cfg.ctx.clearRect(0, 0, cfg.drawW, cfg.drawH);
-        cfg.ctx.drawImage(cfg.frames[frameIndex], 0, 0, cfg.drawW, cfg.drawH);
+  function render(time) {
+    frame = 0;
+    for (const flag of flags) {
+      attach(flag);
+      if (!flag.canvas || !flag.temple.isConnected) continue;
+      const box = flag.temple.getBoundingClientRect();
+      if (box.bottom < 0 || box.top > innerHeight) continue;
+      const parent = flag.temple.parentElement.getBoundingClientRect();
+      flag.lights?.forEach((light, index) => {
+        const x = index === 0 ? .17 : .83;
+        Object.assign(light.style, {
+          left: `${box.left - parent.left + box.width * (x - .055)}px`,
+          top: `${box.top - parent.top + box.height * .69}px`,
+          width: `${box.width * .11}px`, height: `${box.height * .045}px`
+        });
+      });
+      const width = box.width * flag.w, height = box.height * flag.h;
+      const padding = height * .16;
+      const ratio = Math.min(devicePixelRatio || 1, 1.5);
+      const pixelWidth = Math.max(1, Math.round(width * ratio));
+      const pixelHeight = Math.max(1, Math.round((height + padding * 2) * ratio));
+      if (flag.canvas.width !== pixelWidth || flag.canvas.height !== pixelHeight) {
+        flag.canvas.width = pixelWidth; flag.canvas.height = pixelHeight;
       }
-    });
-
-    requestAnimationFrame(loop);
+      Object.assign(flag.canvas.style, {
+        left: `${box.left - parent.left + box.width * flag.x}px`,
+        top: `${box.top - parent.top + box.height * flag.y - padding}px`,
+        width: `${width}px`, height: `${height + padding * 2}px`
+      });
+      const ctx = flag.context;
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+      ctx.clearRect(0, 0, width, height + padding * 2);
+      const strips = 64;
+      for (let i = 0; i < strips; i++) {
+        const progress = i / strips;
+        const wave = Math.sin(time / 620 - progress * 6 + flag.phase) * padding * progress * progress;
+        ctx.drawImage(flag.image, i * flag.image.naturalWidth / strips, 0,
+          flag.image.naturalWidth / strips, flag.image.naturalHeight,
+          i * width / strips, padding + wave, width / strips + .7, height);
+      }
+      // Remove only the original flag rectangle once its animated replacement is ready.
+      const left = flag.x * 100, top = flag.y * 100;
+      const right = (flag.x + flag.w) * 100, bottom = (flag.y + flag.h) * 100;
+      flag.temple.style.clipPath = `polygon(evenodd,0% 0%,100% 0%,100% 100%,0% 100%,0% 0%,${left}% ${top}%,${right}% ${top}%,${right}% ${bottom}%,${left}% ${bottom}%,${left}% ${top}%)`;
+    }
+    if (!document.hidden && !reduced.matches) frame = requestAnimationFrame(render);
   }
-
-  requestAnimationFrame(loop);
+  function sync() {
+    cancelAnimationFrame(frame);
+    for (const flag of flags) {
+      if (flag.canvas) flag.canvas.hidden = reduced.matches;
+      if (reduced.matches && flag.temple) flag.temple.style.clipPath = '';
+    }
+    if (!document.hidden && !reduced.matches) frame = requestAnimationFrame(render);
+  }
+  for (const flag of flags) {
+    flag.image = new Image(); flag.image.onload = sync;
+    flag.image.src = 'resources/assets/source-1/' + flag.source;
+  }
+  document.addEventListener('visibilitychange', sync);
+  reduced.addEventListener('change', sync);
 })();

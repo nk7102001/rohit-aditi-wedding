@@ -1,43 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Rozha+One&family=Yatra+One&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Cinzel Decorative Local';
-  src: url('fonts/CinzelDecorative-Bold.ttf') format('truetype');
+  src: url('fonts/CinzelDecorative-Bold.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Great Vibes Local';
-  src: url('fonts/GreatVibes-Regular.ttf') format('truetype');
+  src: url('fonts/GreatVibes-Regular.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Playfair Display Local';
-  src: url('fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  src: url('fonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
   font-weight: 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Montserrat Local';
-  src: url('fonts/Montserrat-Medium.ttf') format('truetype');
+  src: url('fonts/Montserrat-Medium.woff2') format('woff2');
   font-weight: 500;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Rozha One Local';
-  src: url('fonts/RozhaOne.ttf') format('truetype');
+  src: url('fonts/RozhaOne.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Yatra One Local';
-  src: url('fonts/YatraOne.ttf') format('truetype');
+  src: url('fonts/YatraOne.woff2') format('woff2');
   font-weight: 400;
   font-display: swap;
 }
